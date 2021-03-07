@@ -7,22 +7,21 @@ import os
 
 dataset_dict = {'PAMAP2': 2e-4,
                 'UCI': 2e-4,
-                #'UNIMIB': 1e-4,
-                #'WISDM': 5e-5,
+                'UNIMIB': 1e-4,
+                'WISDM': 5e-5,
                 'USC_HAD': 1e-4,
                 'OPPO': 2e-4
                 }
 
 ylim_dict = {'PAMAP2': (0, 1),
-                'UCI': (0.5, 1),
-                'UNIMIB': (0.3, 0.8),
-                'WISDM': (0.8, 1),
-                'USC_HAD': (0.5, 1),
-                'OPPO': (0.5, 0.9)
-                }
+             'UCI': (0.5, 1),
+             'UNIMIB': (0.3, 0.8),
+             'WISDM': (0.8, 1),
+             'USC_HAD': (0.5, 1),
+             'OPPO': (0.5, 0.9)
+             }
 
 def adjust_learning_rate(optimizer, epoch, init_LR):
-    # lr = init_LR / (2 ** (epoch // 30))
     if epoch in range(50):
         lr = init_LR
     elif epoch in range(50, 90):
@@ -35,7 +34,7 @@ def adjust_learning_rate(optimizer, epoch, init_LR):
         param_group['lr'] = lr
 
 
-def main(filename, learnint_rate):
+def main(filename):
     fig_list = []
     acc_list = []
     loss_list = []
@@ -74,7 +73,7 @@ def main(filename, learnint_rate):
                 }
 
     EP = 150
-    B_S = 170
+    B_S = 128
     loss_fn = nn.CrossEntropyLoss()
 
     train_loader = d.DataLoader(train_data, batch_size=B_S, shuffle=True)
@@ -82,9 +81,9 @@ def main(filename, learnint_rate):
 
     def start(NET):
         net = NET.cuda()
-        # net = nn.DataParallel(net).cuda()
-        # LR = dataset_dict[filename]
-        LR = learnint_rate
+        net = nn.DataParallel(net).cuda()
+        LR = dataset_dict[filename]
+
         optimizer = torch.optim.AdamW(net.parameters(), lr=LR)
 
         view = []
@@ -114,12 +113,6 @@ def main(filename, learnint_rate):
         acc_list.append(avgacc)
         fig_list.append(view)
 
-        # name = 'array/' + filename + '/' + net_dict[NET][:-1] + '.npy'
-        # result = np.array(view)
-        # if os.path.exists(name):
-        #     temp = np.load(name)
-        #     result = np.vstack((temp, result))
-        # np.save(name, result)
 
     for each_net in net_dict.keys():
         start(each_net)
@@ -130,46 +123,13 @@ def main(filename, learnint_rate):
     plt.xlabel('Epoch')
     plt.ylim(ylim_dict[filename][0], ylim_dict[filename][1])
     plt.legend()
-    # plt.savefig(filename+str(learnint_rate)+'.png')
+    plt.savefig(filename+'.png')
     plt.show()
-    # for i, each in enumerate(net_dict.values()):
-    #     plt.plot(loss_list[i], label=each)
-    # plt.title('Comparisons On ' + filename + ' Dataset')
-    # plt.ylabel('Error')
-    # plt.xlabel('Epoch')
-    # plt.legend()
-    # plt.show()
+
     print('=====================================================================\n%s\n=====================================================================' % (acc_list))
 
-# for eachdataset in dataset_dict.keys():
-#     main(eachdataset, 1e-4)
-# for eachdataset in dataset_dict.keys():
-#     main(eachdataset, 3e-4)
-# main('PAMAP2', 7.5e-5)
-while 1:
-    main('WISDM', 5e-5)
-    main('WISDM', 4e-5)
-    main('WISDM', 3e-5)
-    main('WISDM', 2e-5)
-    main('WISDM', 1e-5)
-# main('UCI', 2e-4)
-# main('USC_HAD', 5e-5)
-# main('USC_HAD', 4e-5)
-# main('USC_HAD', 3e-5)
-# main('USC_HAD', 2e-5)
-# main('USC_HAD', 1e-5)
-#
-# main('UCI', 5e-5)
-# main('UCI', 4e-5)
-# main('UCI', 3e-5)
-# main('UCI', 2e-5)
-# main('UCI', 1e-5)
-# # main('OPPO', 6e-5)
-#
-# main('OPPO', 5e-5)
-# main('OPPO', 4e-5)
-# main('OPPO', 3e-5)
-# main('OPPO', 2e-5)
-# main('OPPO', 1e-5)
+for eachdataset in dataset_dict.keys():
+    main(eachdataset)
+
 
 
