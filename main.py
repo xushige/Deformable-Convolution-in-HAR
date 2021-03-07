@@ -64,11 +64,9 @@ def main(filename):
 
 
     net_dict = {CNN(seclast_div=sec_last_div_num, last_div=last_div_num, classes=category, ifdeform=False): 'cnn_base',
-                #SKcnn(sec_div_num=sec_last_div_num, last_div_num=last_div_num, classes=category): 'cnn_SK:',
                 CNN(seclast_div=sec_last_div_num, last_div=last_div_num, classes=category, ifdeform=True, df=True): 'cnn_DFC',
 
                 Resnet(seclast_div=sec_last_div_num, last_div=last_div_num, classes=category): 'Res_base',
-                #SKNet(sec=sec_last_div_num, last=last_div_num, class_num=category): 'Res_SK:',
                 Deform_resnet(seclast_div=sec_last_div_num, last_div=last_div_num, classes=category, df=True): 'Res_DFC'
                 }
 
