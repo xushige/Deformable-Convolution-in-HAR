@@ -5,7 +5,8 @@
   <img src="model_fig/modelbig.png" width="1050"/>
 </div>
 <br />
-## Here shows the simplfied TRAIN process on benchmark public datasets. Thanks for pointing out improper!
+
+### Here shows the simplfied TRAIN process on benchmark public datasets. Thanks for pointing out improper!
 ### Requirements in this work
 1. Python 3.8.10  
 2. PyTorch 1.8.2 + cu111
