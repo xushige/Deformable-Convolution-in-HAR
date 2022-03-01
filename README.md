@@ -1,7 +1,8 @@
 # Deformable-Convolution-for-HAR
 ## JOURNAL: [IEEE TRANSACTIONS ON INSTRUMENTATION AND MEASUREMENT 2022] 
 ## TITLE: [Deformable Convolutional Networks for Multimodal Human Activity Recognition using Wearable Sensors]
-![Model](https://github.com/wenbohuang1002/-IEEE-JBHI-2021-Channel-Selectivity-CNN-for-HAR/blob/main/Images/Model.png)
+![Model](https://github.com/xushige/Deformable-Convolution-in-HAR/blob/main/modelbig.png)
+![Model](https://github.com/xushige/Deformable-Convolution-in-HAR/blob/main/modelsmall.png)
 Here shows the simplfied TRAIN process on benchmark public datasets.
 Thanks for pointing out improper!
 ### Requirements in this work
