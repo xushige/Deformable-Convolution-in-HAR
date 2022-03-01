@@ -6,7 +6,7 @@ Here shows the simplfied TRAIN process on benchmark public datasets.
 Thanks for pointing out improper!
 ### Requirements in this work
 ● Python 3.8.10  
-● PyTorch 1.8.2 + cu111
+● PyTorch 1.8.2
 ● Numpy 1.21.2
 ### Train
 Get required dataset from UCI Machine Learning Repository(http://archive.ics.uci.edu/ml/index.php), do data pre-processing by sliding window strategy and split the data into training and test sets
