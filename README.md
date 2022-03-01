@@ -2,11 +2,11 @@
 ## JOURNAL: [IEEE TRANSACTIONS ON INSTRUMENTATION AND MEASUREMENT 2022] 
 ## TITLE: [Deformable Convolutional Networks for Multimodal Human Activity Recognition using Wearable Sensors]
   <div align="center">
-    <img src="modelbig.png" width="800"/>
+    <img src="model_fig/modelbig.png" width="800"/>
   </div>
   <br />
   div align="center">
-    <img src="modelsmall.png" width="800"/>
+    <img src="model_fig/modelsmall.png" width="200"/>
   </div>
   <br />
 Here shows the simplfied TRAIN process on benchmark public datasets.
