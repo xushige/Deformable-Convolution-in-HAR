@@ -11,7 +11,7 @@
 </div>
 <br />
 
-### Here shows the simplfied TRAIN process on benchmark public datasets. Thanks for pointing out improper!
+### Here shows the model architecture and the simplfied TRAIN process on benchmark public datasets. Thanks for pointing out improper!
 ### Requirements in this work
 1. Python 3.8.10  
 2. PyTorch 1.8.2 + cu111
