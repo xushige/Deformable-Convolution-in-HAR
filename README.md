@@ -1,7 +1,5 @@
 # Deformable-Convolution-for-HAR
-## CITE: S. Xu, L. Zhang, W. Huang, H. Wu and A. Song. Deformable Convolutional Networks for Multimodal Human Activity Recognition using Wearable Sensors[J]. IEEE Transactions on Instrumentation and Measurement, vol. 71, pp. 1-14, 2022. 
-## JOURNAL: [IEEE TRANSACTIONS ON INSTRUMENTATION AND MEASUREMENT 2022] 
-## TITLE: [Deformable Convolutional Networks for Multimodal Human Activity Recognition using Wearable Sensors]
+### CITE: S. Xu, L. Zhang, W. Huang, H. Wu and A. Song. Deformable Convolutional Networks for Multimodal Human Activity Recognition using Wearable Sensors[J]. IEEE Transactions on Instrumentation and Measurement, vol. 71, pp. 1-14, 2022. 
 <div align="center">
   <img src="model_fig/modelbig.png" width="1000"/>
 </div>
