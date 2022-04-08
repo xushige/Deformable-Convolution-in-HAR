@@ -6,7 +6,7 @@
 <br />
 
 <div align="center">
-  <img src="model_fig/modelsmall.png" width="400"/>
+  <img src="model_fig/modelsmall.png" width="300"/>
 </div>
 <br />
 
