@@ -2,7 +2,7 @@ import torch
 from torch import nn
 
 class DeformConv2d(nn.Module):
-    def __init__(self, inc, outc, kernel_size=3, stride=1, padding=1, bias=None, modulation=False):
+    def __init__(self, inc, outc, kernel_size=(3,3), stride=(1,1), padding=(1,1), bias=None, modulation=False):
         """
         Args:
             modulation (bool, optional): If True, Modulated Defomable Convolution (Deformable ConvNets v2).
